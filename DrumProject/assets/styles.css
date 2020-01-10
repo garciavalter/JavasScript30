@@ -1,0 +1,24 @@
+body{
+    background-color: black;
+}
+.container{
+    text-align: center;
+    margin: 25% auto;
+}
+.key{
+    text-align: center;
+    font-weight: bold;
+    font-size: 2em;
+    display: inline-block;
+    border: 0.1em;
+    padding: 0.5em 1em;
+    margin: 0.2em;
+    border-color: white;
+    border-style: solid;
+    color: white;
+}
+span{
+    font-size: 0.2em;
+    color: yellow;
+    display: block;
+}
