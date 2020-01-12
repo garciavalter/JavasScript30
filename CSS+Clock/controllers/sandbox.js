@@ -4,9 +4,9 @@ const secHand = document.querySelector(".sec-hand");
 
 function updateClock() {
     const date = new Date();
-    axisS =date.getSeconds() * 6 - 270 ;
-    axisM = date.getMinutes() * 6 - 270;
-    axisH = (date.getHours() * 30 - 270) + (date.getMinutes() / 2);
+    axisS =date.getSeconds() * 6 + 90 ;
+    axisM = date.getMinutes() * 6 + 90;
+    axisH = (date.getHours() * 30 + 90) + (date.getMinutes() / 2);
     console.log(axisH);
 
     secHand.style.transform = `rotate(${axisS}deg)`;
