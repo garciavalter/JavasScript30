@@ -39,10 +39,8 @@ function handleCheck(e) {
                 checkbox.checked = false;
             }            
         });
-    
         handler = false;
     }
 
     handler ? lastChecked = this : lastChecked = undefined;
-    console.log(e);
 }
