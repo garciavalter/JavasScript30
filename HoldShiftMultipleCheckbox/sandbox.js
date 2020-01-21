@@ -7,8 +7,10 @@ checkboxes.forEach(checkbox => {
 let lastChecked;
 
 function handleCheck(e) {
+    let handler = true;
+    
     if (e.shiftKey && this.checked){
-        console.log('checking');
+        console.log(lastChecked);
         let checking = false 
         checkboxes.forEach(checkbox => {
             if (checkbox == lastChecked) {
@@ -21,6 +23,7 @@ function handleCheck(e) {
                 checkbox.checked = true;
             }            
         });
+        handler = true;
     }
     if (e.shiftKey && !this.checked){
         console.log('unchecking');
@@ -29,15 +32,17 @@ function handleCheck(e) {
             if (checkbox == this) {
                 checking = true; 
                }
-            if (checkbox == lastChecked) {
+            if (checkbox == lastChecked.nextSibling) {
                 checking = false;
             } 
             if (checking) {
                 checkbox.checked = false;
             }            
         });
+    
+        handler = false;
     }
 
-    lastChecked = this;
+    handler ? lastChecked = this : lastChecked = undefined;
     console.log(e);
 }
