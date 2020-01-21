@@ -8,20 +8,36 @@ let lastChecked;
 
 function handleCheck(e) {
     if (e.shiftKey && this.checked){
-        let status = false
+        let count = 0 
         checkboxes.forEach(checkbox => {
             if (checkbox == lastChecked) {
-                status = !status; 
-                }
+                count = 1; 
+               }
             if (checkbox == this) {
-                status = !status;
-            } else {
-                checkbox.checked = status;
+                count = 0;
+            } 
+            if (count > 0) {
+                checkbox.checked = true;
             }            
-        })
+        });
     }
-
+    if (e.shiftKey && !this.checked){
+        let count = 0 
+        checkboxes.forEach(checkbox => {
+            if (checkbox == lastChecked) {
+                count = 1; 
+               }
+            if (checkbox == this) {
+                count = 0;
+            } 
+            if (count > 0) {
+                checkbox.checked = false;
+            }            
+        });
+    }
     
+
+
     lastChecked = this;
     console.log(e);
 }
