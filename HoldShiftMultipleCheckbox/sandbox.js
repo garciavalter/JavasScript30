@@ -8,35 +8,35 @@ let lastChecked;
 
 function handleCheck(e) {
     if (e.shiftKey && this.checked){
-        let count = 0 
+        console.log('checking');
+        let checking = false 
         checkboxes.forEach(checkbox => {
             if (checkbox == lastChecked) {
-                count = 1; 
+                checking = true; 
                }
             if (checkbox == this) {
-                count = 0;
+                checking = false;
             } 
-            if (count > 0) {
+            if (checking) {
                 checkbox.checked = true;
             }            
         });
     }
     if (e.shiftKey && !this.checked){
-        let count = 0 
+        console.log('unchecking');
+        let checking = false 
         checkboxes.forEach(checkbox => {
-            if (checkbox == lastChecked) {
-                count = 1; 
-               }
             if (checkbox == this) {
-                count = 0;
+                checking = true; 
+               }
+            if (checkbox == lastChecked) {
+                checking = false;
             } 
-            if (count > 0) {
+            if (checking) {
                 checkbox.checked = false;
             }            
         });
     }
-    
-
 
     lastChecked = this;
     console.log(e);
